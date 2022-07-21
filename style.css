@@ -61,11 +61,6 @@ body {
   /* padding-bottom: 1rem; */
 }
 
-.bottom.flex-item {
-  border-bottom: 0;
-  padding-bottom: 0;
-}
-
 .nr-points {
   flex-direction: column;
   justify-content: center;
