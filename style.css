@@ -139,6 +139,19 @@ body {
   padding: 0;
 }
 
+.btn-increase {
+  color: #fff;
+  background-color: #222;
+  cursor: pointer;
+  padding: 0.2rem 0.4rem;
+  margin-top: 0.1rem;
+  border: none;
+}
+
+.btn-increase:hover {
+  background-color: #666;
+}
+
 @keyframes bounce {
   from {
     transform: translateY(0);
@@ -210,11 +223,11 @@ body {
   border-color: #c92c4a;
 }
 
-.Haas:hover {
+.HaasF1Team:hover {
   border-color: #b7bbbd;
 }
 
-.Haas > .card-item > .full-name {
+.HaasF1Team > .card-item > .full-name {
   border-color: #b7bbbd;
 }
 .Williams:hover {
@@ -222,6 +235,14 @@ body {
 }
 
 .Williams > .card-item > .full-name {
+  border-color: #37bfdc;
+}
+
+.Alpine:hover {
+  border-color: #37bfdc;
+}
+
+.Alpine > .card-item > .full-name {
   border-color: #37bfdc;
 }
 

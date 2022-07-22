@@ -7,6 +7,22 @@ const sortedDrivers = function (data) {
 };
 sortedDrivers(mockData);
 
+const increasePoints = function (index, elem) {
+  const btnIncrease = document.querySelector(`.btn-increase-${index + 1}`);
+  const curElem = document.querySelector(
+    `.${elem.team.split(/\s/).join("")} > .card-item > .full-name`
+  );
+  
+  const btnColor = window.getComputedStyle(curElem, null).borderColor;
+  btnIncrease.style.background = btnColor;
+  btnIncrease.addEventListener("click", function () {
+    const points = document.querySelector(
+      `.card-${index + 1} > .score > .nr-points > .number-points`
+    );
+    points.textContent = parseInt(points.textContent) + 1;
+  });
+};
+
 const createCard = function (dataDriver) {
   const container = document.querySelector(".container");
 
@@ -22,6 +38,9 @@ const createCard = function (dataDriver) {
             <span class="number-points">${
               element.points
             }</span><span class="points">PTS</span>
+            <button class='btn-increase btn-increase-${
+              indexPlacement + 1
+            }'>Add points</button>
           </div>
         </div>
         <div class="card-item">
@@ -41,19 +60,7 @@ const createCard = function (dataDriver) {
         </div>
       </div>`
     );
+    increasePoints(indexPlacement, element);
   });
 };
 createCard(mockData);
-
-const increasePoints = function () {
-  const container = document.querySelector(".container");
-  container.addEventListener("mouseover", function (e) {
-    let target = e.target;
-    const points = document.querySelector(".number-points");
-    if (target.classList.contains("nr-points")) {
-      points.textContent = parseInt(points.textContent) + 1;
-    }
-  });
-};
-
-increasePoints();
